@@ -1,5 +1,7 @@
 package com.example.towertracker
 
+import android.content.Context
+import android.content.Intent
 import android.os.Bundle
 import android.widget.Button
 import android.widget.Toast
@@ -23,9 +25,10 @@ class MainActivity : AppCompatActivity() {
         super.onCreate(savedInstanceState)
 //        requestWindowFeature(Window.FEATURE_NO_TITLE);
 //        getWindow().setFlags(WindowManager.LayoutParams.FLAG_FULLSCREEN, WindowManager.LayoutParams.FLAG_FULLSCREEN);
-
         setContentView(R.layout.activity_main)
 
+        val sharedPref =
+            getSharedPreferences(getString(R.string.shared_preferences), Context.MODE_PRIVATE)
         usernameTextField = findViewById(R.id.usernameTextField)
         passwordTextField = findViewById(R.id.passwordTextField)
         proceedButton = findViewById(R.id.proceedButton)
@@ -43,6 +46,12 @@ class MainActivity : AppCompatActivity() {
                         val password = dataSnapshot.child(user).child("pass").getValue<String>()
                         if (pass == password) {
                             Toast.makeText(this@MainActivity, password, Toast.LENGTH_LONG).show()
+                            sharedPref.edit().clear().apply()
+                            sharedPref.edit().putBoolean("is_logged_in", true).apply()
+                            sharedPref.edit().putString("username", user).apply()
+                            val intent = Intent(this@MainActivity, TowerLinesActivity::class.java)
+                            startActivity(intent)
+                            finish()
                         } else {
                             Toast.makeText(
                                 this@MainActivity,
@@ -60,7 +69,7 @@ class MainActivity : AppCompatActivity() {
                     println("loadPost:onCancelled ${databaseError.toException()}")
                 }
             }
-            database.child("emp_detail").orderByChild("username").equalTo(user)
+            database.child("auth").orderByChild("username").equalTo(user)
                 .addListenerForSingleValueEvent(listener)
 
 
