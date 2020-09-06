@@ -8,71 +8,104 @@
     app:cardCornerRadius="8dp">
 
     <LinearLayout
-        android:id="@+id/llContent"
         android:layout_width="match_parent"
-        android:layout_height="60dp"
-        android:background="#9AFFCA28"
-        android:orientation="horizontal"
-        android:padding="8dp"
-        android:weightSum="7">
+        android:layout_height="wrap_content"
+        android:orientation="vertical">
 
-        <TextView
-            android:id="@+id/txtLineIndex"
-            android:layout_width="0dp"
-            android:layout_height="wrap_content"
-            android:layout_gravity="center"
-            android:layout_marginEnd="5dp"
-            android:layout_weight=".8"
-            android:text="#"
-            android:textAlignment="center" />
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="4.2"
-            android:orientation="vertical"
-            android:padding="2dp">
+        <LinearLayout
+            android:id="@+id/llContent"
+            android:layout_width="match_parent"
+            android:layout_height="70dp"
+            android:background="#9AFFCA28"
+            android:orientation="horizontal"
+            android:padding="8dp"
+            android:weightSum="7">
 
             <TextView
-                android:id="@+id/txtLineId"
-                android:layout_width="match_parent"
+                android:id="@+id/txtLineIndex"
+                android:layout_width="0dp"
                 android:layout_height="wrap_content"
-                android:text="#T01"
-                android:textColor="#000" />
+                android:layout_gravity="center"
+                android:layout_marginEnd="5dp"
+                android:layout_weight=".8"
+                android:text="#"
+                android:textAlignment="center" />
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_marginEnd="10dp"
+                android:layout_weight="4.2"
+                android:orientation="vertical">
+
+                <TextView
+                    android:id="@+id/txtLineId"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="#T01"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/txtLineName"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="#MUMBAI TO GOA"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+
+            <RelativeLayout
+                android:layout_width="0dp"
+                android:layout_height="match_parent"
+                android:layout_weight="2"
+                android:orientation="vertical"
+                android:padding="2dp">
+
+                <TextView
+                    android:id="@+id/txtLineLength"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:text="#10km"
+                    android:textColor="#000" />
+
+                <TextView
+                    android:id="@+id/txtLineStatus"
+                    android:layout_width="match_parent"
+                    android:layout_height="wrap_content"
+                    android:layout_alignParentBottom="true"
+                    android:text="#not patrolled"
+                    android:textSize="12sp" />
+
+            </RelativeLayout>
+        </LinearLayout>
+
+        <LinearLayout
+            android:id="@+id/llContentExtra"
+            android:visibility="gone"
+            android:weightSum="2"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content">
 
             <TextView
-                android:id="@+id/txtLineName"
-                android:layout_width="match_parent"
+                android:id="@+id/txtLineMap"
+                android:padding="2dp"
+                android:background="#26C6DA"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:text="#mumbai to goa"
-                android:textSize="12sp" />
-
-        </RelativeLayout>
-
-        <RelativeLayout
-            android:layout_width="0dp"
-            android:layout_height="match_parent"
-            android:layout_weight="2"
-            android:orientation="vertical"
-            android:padding="2dp">
-
+                android:text="MAP" />
             <TextView
-                android:id="@+id/txtLineLength"
-                android:layout_width="match_parent"
+                android:id="@+id/txtLineDetails"
+                android:padding="2dp"
+                android:background="#9CCC65"
+                android:gravity="center"
+                android:layout_weight="1"
+                android:layout_width="wrap_content"
                 android:layout_height="wrap_content"
-                android:text="#10km"
-                android:textColor="#000" />
+                android:text="DETAILS" />
 
-            <TextView
-                android:id="@+id/txtLineStatus"
-                android:layout_width="match_parent"
-                android:layout_height="wrap_content"
-                android:layout_alignParentBottom="true"
-                android:text="#not patrolled"
-                android:textSize="12sp" />
-
-        </RelativeLayout>
-
+        </LinearLayout>
     </LinearLayout>
 </androidx.cardview.widget.CardView>

@@ -1,24 +1,27 @@
 <?xml version="1.0" encoding="utf-8"?>
 <RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
     xmlns:tools="http://schemas.android.com/tools"
     android:layout_width="match_parent"
     android:layout_height="match_parent"
-    tools:context=".activity.TowerLinesActivity">
+    tools:context=".activity.TowerListActivity">
 
     <TextView
         android:layout_marginStart="4dp"
-        android:id="@+id/labelAssignedLines"
+        android:id="@+id/labelLineDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
         android:padding="8dp"
-        android:text="Assigned Lines"
+        android:text="Line Name"
         android:textStyle="bold" />
 
     <androidx.recyclerview.widget.RecyclerView
-        android:id="@+id/recyclerTowerLines"
+        android:id="@+id/recyclerTowerList"
+        android:layout_marginTop="4dp"
+        android:layout_below="@id/labelLineDesc"
         android:layout_width="match_parent"
         android:layout_height="wrap_content"
-        android:layout_below="@id/labelAssignedLines"
         android:padding="4dp" />
+
 
 </RelativeLayout>

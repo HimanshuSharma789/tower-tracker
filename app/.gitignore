@@ -2,3 +2,5 @@
 google-services.json
 /src/main/res/xml
 /src/main/java/com/example/towertracker/Constants.kt
+/src/debug/res/values/google_maps_api.xml
+/src/release/res/values/google_maps_api.xml

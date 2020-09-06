@@ -1,4 +1,5 @@
 <resources>
     <string name="app_name">Tower Tracker</string>
     <string name="shared_preferences">shared preferences</string>
+    <string name="title_activity_tower_maps">Map</string>
 </resources>
