@@ -10,6 +10,7 @@ import android.widget.TextView
 import android.widget.Toast
 import androidx.recyclerview.widget.RecyclerView
 import com.example.towertracker.R
+import com.example.towertracker.TowerMapsActivity
 import com.example.towertracker.activity.TowerListActivity
 import com.example.towertracker.model.TowerLines
 
@@ -50,9 +51,11 @@ class TowerLinesRecyclerAdapter(val context: Context, var linesList: ArrayList<T
 
         holder.txtLineMap.setOnClickListener {
             Toast.makeText(context, "MAP", Toast.LENGTH_SHORT).show()
+            val intent = Intent(context, TowerMapsActivity::class.java)
+            intent.putExtra("lineId", lines.LineID.toString())
+            context.startActivity(intent)
         }
         holder.txtLineDetails.setOnClickListener {
-            Toast.makeText(context, "DETAILS", Toast.LENGTH_SHORT).show()
             val intent = Intent(context, TowerListActivity::class.java)
             intent.putExtra("lineId", lines.LineID.toString())
             intent.putExtra("lineDesc", lines.Line_desc)

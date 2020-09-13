@@ -74,8 +74,8 @@ class TowerLinesActivity : AppCompatActivity() {
                 }, Response.ErrorListener {
                     Toast.makeText(
                         this@TowerLinesActivity,
-                        "Volley error occurred: $it",
-                        Toast.LENGTH_SHORT
+                        "Connection error occurred",
+                        Toast.LENGTH_LONG
                     ).show()
                 }) {
             override fun getParams(): MutableMap<String, String> {
